@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 
+import 'package:personalitytest/main/Question_page.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -36,13 +39,23 @@ class _MainPage extends State<MainPage>{
                   itemBuilder: (context,index){
                     return InkWell(
                       onTap: () async {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context){
-                          return DetailPage(
-                            question: list['questions'][index]['file'].toString(),
+                        try{
+                          await FirebaseAnalytics.instance.logEvent(
+                            name: 'test_click',
+                            parameters: {
+                              'test_name':
+                                  list['questions'][index]['title'].toString(),
+                            },
                           );
-                        }));
 
+                        await Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context){
+                          return QuestionPage(question: list['questions'][index]['file'].toString(),
+);
+                        },),);
+                      } catch(e) {
+                        print('Failed to log event: $e');
+                        }
                       },
                       child : SizedBox(
                         height : 50,
