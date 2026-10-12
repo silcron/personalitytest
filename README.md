@@ -1,17 +1,21 @@
-# personalitytest
+# Personality Test
 
-A new Flutter project.
+Flutter로 만든 간단한 성격 검사 애플리케이션입니다. 사용자가 검사 항목을 선택하고 답변을 고르면 결과를 확인할 수 있습니다.
 
-## Getting Started
+## 주요 기능
 
-This project is a starting point for a Flutter application.
+- 성격 검사 목록 조회
+- 검사 문항과 선택지 표시
+- 선택한 답변에 따른 결과 화면 제공
+- 검사 시작과 답변 선택 이벤트 기록(Firebase Analytics)
 
-A few resources to get you started if this is your first Flutter project:
+## 개발 타임라인
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+| 날짜 | 작업 내용 |
+| --- | --- |
+| 2026.10.07 | Flutter 프로젝트의 기본 구조를 구성하고 Android·iOS 실행 환경을 설정했습니다. 성격 검사 목록, 문항, 결과를 위한 JSON 데이터를 작성하고 목록 화면·문항 화면·결과 화면의 초기 버전을 구현했습니다. Firebase 설정 파일도 프로젝트에 추가했습니다. |
+| 2026.10.12 | 검사 목록에서 문항 화면으로 이동하고, 답변을 선택한 뒤 결과를 확인하는 전체 흐름을 완성했습니다. 결과 화면의 가독성과 뒤로 가기 동작을 개선했으며, Firebase 초기화와 검사 선택·답변 선택 Analytics 이벤트 기록을 추가했습니다. |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 사용 흐름
+
+`검사 목록 선택 → 문항 및 답변 선택 → 성격 결과 확인`
