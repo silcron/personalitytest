@@ -50,3 +50,17 @@
 ## 사용 흐름
 
 `검사 목록 선택 → 문항 및 답변 선택 → 성격 결과 확인`
+
+## 공개 저장소의 API 키 설정
+
+공개본의 Firebase API 키는 `YOUR_FIREBASE_API_KEY` 예제 문자열로 대체했습니다. 실제 키가 들어 있는 작업용 원본은 별도로 보관하며 공개용 사본에서만 업로드합니다.
+
+실행하려면 Firebase CLI와 FlutterFire CLI를 준비한 뒤 본인이 관리하는 프로젝트로 설정을 생성하세요.
+
+```sh
+flutter pub get
+flutterfire configure --project=YOUR_FIREBASE_PROJECT_ID --platforms=android,ios
+flutter run
+```
+
+설정 재생성 후 실제 키가 포함된 파일을 다시 커밋하지 않도록 주의해야 합니다.
